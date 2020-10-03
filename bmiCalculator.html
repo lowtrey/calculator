@@ -1,15 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>BMI Calculator</title>
-  </head>
-  <body>
-    <h1>BMI Calculator</h1>
-    <form class="" action="/bmicalculator" method="post">
-      <input type="text" name="weight" placeholder="Weight(kg)">
-      <input type="text" name="height" placeholder="Height(cm)">
-      <button type="submit" name="submit">Calculate BMI</button>
-    </form>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="fevi.png">
+
+</head>
+<body style="background-image: url('https://cdn.hipwallpaper.com/m/96/3/6g7iER.jpg');">
+   
+    <div class="container-fluid">
+            <div class="card" style="background-image: url('https://cdn.hipwallpaper.com/m/31/67/sU2y9f.jpg');">
+          <div class="card-header text-center bg-success" >BMI Calculator</div>
+          <div class="card-body">
+              <form class="w-50 m-auto" onsubmit="return false">
+                <div class="form-group">
+                    <label class="heading" for="">Weight:</label>
+                    <input type="text" name="weight" required id="Weight" placeholder="Weight in kg"
+                    class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="heading" for="">Height:</label>
+                    <input type="text" name="height" required id="Height" placeholder="Height in feet" class="form-control">
+                    
+                </div>
+                 
+
+                <div class="form-group">
+                    <label class="heading" for="">BMI Value:</label>
+                    <input type="text" name="" id="BMI" placeholder="Body Mass Index" class="form-control">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger" onclick ="bmivalue(),guest()">Check BMI</button>
+     
+                    <button type="reset" class="btn btn-danger">Refresh</button>
+                </div>
+              </form>
+           
+           
+          </div>
+          <div class="card-footer text-center bg-success" >A healthy BMI ranges between 19 and 25.</div>
+        </div> 
+        </div>     
+ 
+    <script>
+        alert("Welcome to BMI Calculator created by Abhishek")
+
+        function bmivalue(){
+            var weight = document.getElementById('Weight').value;
+        var height = document.getElementById('Height').value;
+                height = height * 12;
+                height = height * 0.025;
+            var newbmivalue = weight/(height * height);
+            //  newbmivalue = Math.round(newbmivalue);
+            newbmivalue = newbmivalue.toFixed(3);
+
+            document.getElementById('BMI').value = newbmivalue;
+        }
+    </script>
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!--Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
 </html>
+
